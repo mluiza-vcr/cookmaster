@@ -37,23 +37,23 @@ jobs:
           ref: v3
           token: ${{ secrets.GIT_HUB_PAT }}
           path: .github/actions/eslint-evaluator
-          
+
       - name: Setup NodeJS
         uses: actions/setup-node@v1.4.4
         with:
           node-version: '14'
-          
+
       - name: Restore protected files
         uses: ./.github/actions/blocked-files-checkout
         with:
           restore_branch: 'master'
-          
+
       - name: Run ESLint evaluator
         uses: ./.github/actions/eslint-evaluator
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           pr_number: ${{ github.event.inputs.pr_number }}
-  
+
   Evaluator:
     runs-on: self-hosted
     name: Evaluator
@@ -80,7 +80,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: betrybe/jest-evaluator-action
-          ref: v9
+          ref: build-version-image
           token: ${{ secrets.GIT_HUB_PAT }}
           path: .github/actions/jest-evaluator
 
