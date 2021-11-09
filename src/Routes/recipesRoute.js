@@ -12,4 +12,6 @@ recipesMiddleware.validateIngredients,
 recipesMiddleware.validatePreparation,
 recipesController.createRecipe);
 
+Router.get('/', recipesController.getAllRecipes);
+
 module.exports = Router;
