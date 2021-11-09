@@ -6,6 +6,8 @@ const usersRoute = require('../Routes/usersRoute');
 
 const loginRoute = require('../Routes/loginRoute');
 
+const recipesRoute = require('../Routes/recipesRoute');
+
 const PORT = 3000;
 
 app.use(bodyParser.json());
@@ -14,6 +16,6 @@ app.use('/users', usersRoute);
 
 app.use('/login', loginRoute);
 
-// app.use('/recipes', recipesRoute);
+app.use('/recipes', recipesRoute);
 
 app.listen(PORT, () => console.log(`conectado na porta ${PORT}`));
