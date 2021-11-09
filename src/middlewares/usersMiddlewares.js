@@ -25,13 +25,13 @@ const validateEmail = (req, res, next) => {
 const verifyEmailExists = async (req, res, next) => {
   const { email } = req.body;
   const verify = await usersModel.getByEmail(email);
-  if (verify) res.status(409).json({ message: 'Email already registered' });
+  if (verify) return res.status(409).json({ message: 'Email already registered' });
   next();
 };
 
 const validatePassword = (req, res, next) => {
   const { password } = req.body;
-  if (!password) res.status(400).json(invalidMessage);
+  if (!password) return res.status(400).json(invalidMessage);
   next();
 };
 

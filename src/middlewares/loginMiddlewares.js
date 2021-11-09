@@ -10,13 +10,13 @@ const invalidData = {
 
 const validateEmail = (req, res, next) => {
   const { email } = req.body;
-  if (!email) res.status(401).json(emptyFields);
+  if (!email) return res.status(401).json(emptyFields);
   next();
 };
 
 const validatePassword = (req, res, next) => {
   const { password } = req.body;
-  if (!password) res.status(401).json(emptyFields);
+  if (!password) return res.status(401).json(emptyFields);
   next();
 };
 
