@@ -11,14 +11,14 @@ const invalidMessage = {
 
 const validateName = (req, res, next) => {
   const { name } = req.body;
-  if (!name) res.status(400).json(invalidMessage);
+  if (!name) return res.status(400).json(invalidMessage);
   next();
 };
 
 const validateEmail = (req, res, next) => {
   const { email } = req.body;
-  if (!email) res.status(400).json(invalidMessage);
-  if (!(validateFormatEmail(email))) res.status(400).json(invalidMessage);
+  if (!email) return res.status(400).json(invalidMessage);
+  if (!(validateFormatEmail(email))) return res.status(400).json(invalidMessage);
   next();
 };
 
