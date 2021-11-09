@@ -1,5 +1,13 @@
 const Router = require('express').Router();
 
-// Router.post('/', ... )
+const usersController = require('../controllers/usersController');
+
+const usersMiddlewares = require('../middlewares/usersMiddlewares');
+
+Router.post('/', usersMiddlewares.validateName,
+  usersMiddlewares.validateEmail,
+  usersMiddlewares.verifyEmailExists,
+  usersMiddlewares.validatePassword,
+  usersController.registerUser);
 
 module.exports = Router;
