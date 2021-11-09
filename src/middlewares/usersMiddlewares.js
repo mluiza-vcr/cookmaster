@@ -6,7 +6,7 @@ function validateFormatEmail(email) {
 }
 
 const invalidMessage = {
-  message: 'Invalid entries. Try again',
+  message: 'Invalid entries. Try again.',
 };
 
 const validateName = (req, res, next) => {
