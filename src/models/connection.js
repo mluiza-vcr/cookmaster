@@ -1,7 +1,6 @@
 require('dotenv').config();
 
 const { MongoClient } = require('mongodb');
-require('dotenv').config();
 
 const OPTIONS = {
   useNewUrlParser: true,

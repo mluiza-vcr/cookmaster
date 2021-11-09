@@ -4,11 +4,15 @@ const app = require('./app');
 
 const usersRoute = require('../Routes/usersRoute');
 
+const loginRoute = require('../Routes/loginRoute');
+
 const PORT = 3000;
 
 app.use(bodyParser.json());
 
 app.use('/users', usersRoute);
+
+app.use('/login', loginRoute);
 
 // app.use('/recipes', recipesRoute);
 
