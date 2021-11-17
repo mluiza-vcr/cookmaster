@@ -32,10 +32,18 @@ const deleteRecipeById = async (req, res) => {
   return res.status(204).end();
 };
 
+const addImage = async (req, res) => {
+  const { id } = req.params;
+  const url = `localhost:3000/src/uploads/${id}.jpeg`;
+  const recipe = await recipesModel.updateImage(id, url);
+  res.status(200).json(recipe);
+};
+
 module.exports = {
   createRecipe,
   getAllRecipes,
   getRecipeById,
   updateRecipeById,
   deleteRecipeById,
+  addImage,
 };
